@@ -9,10 +9,29 @@
 
 nav{
     background-color: rgba(31, 31, 31, 0.884);
-    color: white;
     padding: 7.5px;
     text-align: center;
 }
+
+nav a{
+    color: white;
+    text-decoration: none;;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: rgb(255, 136, 0);
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 5px auto 5px auto;
+}
+
+
 
 footer{
     height: 50px;

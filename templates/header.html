@@ -8,6 +8,14 @@
     <title>News API</title>
 </head>
 <nav>
-    <h1>NEWS</h1>
+    <a href="/"><h1>NEWS</h1></a>
+    <ul>
+        <li><a href="{{ url_for('articles', category='business')}}">Business</a></li>
+        <li><a href="{{ url_for('articles', category='entertainment')}}">Entertainment</a></li>
+        <li><a href="{{ url_for('articles', category='health')}}">Health</a></li>
+        <li><a href="{{ url_for('articles', category='science')}}">Science</a></li>
+        <li><a href="{{ url_for('articles', category='sport')}}">Sport</a></li>
+        <li><a href="{{ url_for('articles', category='technology')}}">Technology</a></li>
+    </ul>
 </nav>
 <body>
