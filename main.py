@@ -3,12 +3,14 @@ from flask import Flask, render_template
 import requests
 import datetime
 
+apiKey = '8df9cb2d5eeb478a98b1039ea86bf393'
+
 app = Flask(__name__)
 
 # Main Route
 @app.route('/')
 def main():
-    api_url = 'https://newsapi.org/v2/top-headlines?country=nz&apiKey=16cd803654d64cbf89e2ec14545f30ad&language=en'
+    api_url = f"https://newsapi.org/v2/top-headlines?country=nz&apiKey={apiKey}&language=en"
     news_items = apiCall(api_url)
     year = getYear()
     if news_items['status'] == "error":
@@ -18,7 +20,7 @@ def main():
 # Route to display articles for specific category
 @app.route('/articles/<category>')
 def articles(category):
-    api_url = f"https://newsapi.org/v2/top-headlines?category={category}&apiKey=16cd803654d64cbf89e2ec14545f30ad&language=en&country=nz"
+    api_url = f"https://newsapi.org/v2/top-headlines?category={category}&apiKey={apiKey}&language=en&country=nz"
     news_items = apiCall(api_url)
     year = getYear()
     if news_items['status'] == "error":
