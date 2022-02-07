@@ -12,7 +12,7 @@ def main():
     news_items = apiCall(api_url)
     year = getYear()
     if news_items['status'] == "error":
-        return render_template("error.html", message=news_items['message'])
+        return render_template("error.html", message=news_items['message'], year=year)
     return render_template('index.html', articles=news_items['articles'], year=year)
 
 # Route to display articles for specific category
