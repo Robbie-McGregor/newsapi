@@ -2,15 +2,15 @@
     <div class="articles">
     {% for article in articles %}
         <div class="article">
+            <a class="article_title" href="{{ article.url }}" target="_blank">
+                {{ article.title }}
+            </a>
             <a href="{{ article.url }}" target="_blank">
                 <div class="article_image">
                     <img src="{{ article.urlToImage }}" alt="" srcset="">
                 </div>
             </a>
             <div class="article_container">
-                <a class="article_title" href="{{ article.url }}" target="_blank">
-                    {{ article.title }}
-                </a>
                 <h3 class="article_description">{{ article.description }}</h3>
                 <p class="article_content">{{ article.content.split('…', 1)[0] }}...</p>
                 <!-- <p>{{ article }}</p> -->
