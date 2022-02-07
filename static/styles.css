@@ -28,7 +28,14 @@ nav ul{
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
-    margin: 5px auto 5px auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+nav ul li{
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
 }
 
 
@@ -104,6 +111,10 @@ a.article_title:hover{
     .articles{
         grid-template-columns: 1fr;
         max-width: 600px;
+    }
+
+    nav ul{
+        flex-direction: column;
     }
 }
 
