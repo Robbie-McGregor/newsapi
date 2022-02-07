@@ -11,6 +11,8 @@ def main():
     api_url = 'https://newsapi.org/v2/top-headlines?country=nz&apiKey=16cd803654d64cbf89e2ec14545f30ad&language=en'
     news_items = apiCall(api_url)
     year = getYear()
+    if news_items['status'] == "error":
+        return render_template("error.html", message=news_items['message'])
     return render_template('index.html', articles=news_items['articles'], year=year)
 
 # Route to display articles for specific category
@@ -19,7 +21,10 @@ def articles(category):
     api_url = f"https://newsapi.org/v2/top-headlines?category={category}&apiKey=16cd803654d64cbf89e2ec14545f30ad&language=en&country=nz"
     news_items = apiCall(api_url)
     year = getYear()
+    if news_items['status'] == "error":
+        return render_template("error.html", message=news_items['message'])
     return render_template('index.html', articles=news_items['articles'], year=year)
+
 
 # Make API call and return as JSON
 def apiCall(url):
