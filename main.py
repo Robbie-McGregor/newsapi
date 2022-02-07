@@ -15,7 +15,7 @@ def main():
 
 @app.route('/articles/<category>')
 def articles(category):
-    api_url = f"https://newsapi.org/v2/top-headlines?category={category}&apiKey=16cd803654d64cbf89e2ec14545f30ad&language=en"
+    api_url = f"https://newsapi.org/v2/top-headlines?category={category}&apiKey=16cd803654d64cbf89e2ec14545f30ad&language=en&country=nz"
     api_response = requests.get(api_url)
     news_items = api_response.json()
     year = datetime.datetime.now().date().strftime("%Y")
