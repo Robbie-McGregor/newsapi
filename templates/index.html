@@ -7,12 +7,32 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>News API</title>
 </head>
+<nav>
+    <h1>NEWS</h1>
+</nav>
 <body>
-    <h1>Title goes here</h1>
-    
-    <p>News goes here</p>
+    <div class="articles">
+    {% for article in articles %}
+        <div class="article">
+            <a href="{{ article.url }}" target="_blank">
+                <div class="article_image">
+                    <img src="{{ article.urlToImage }}" alt="" srcset="">
+                </div>
+            </a>
+            <div class="article_container">
+                <a class="article_title" href="{{ article.url }}" target="_blank">
+                    {{ article.title }}
+                </a>
+                <h3 class="article_description">{{ article.description }}</h3>
+                <p class="article_content">{{ article.content.split('…', 1)[0] }}...</p>
+                <!-- <p>{{ article }}</p> -->
+            </div>
 
+        <br>
+        </div>
 
+    {% endfor %}
+    </div>
     <footer>
         
     </footer>
